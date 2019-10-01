@@ -1,0 +1,13 @@
+<beans>
+    <!--这里必须注意的是，必须保证被引用的bean先加载到beanMap中，否则会抛错no such bean-->
+    <bean id="screen" class="IOC.Screen">
+        <property name="weight" value="5kg"/>
+        <property name="color" value="blue"/>
+    </bean>
+    <bean id="tv" class="IOC.TV">
+        <property name="length" value="1.57m"/>
+        <property name="width" value="1.0m"/>
+        <property name="screen" ref="screen"/>
+    </bean>
+
+</beans>
